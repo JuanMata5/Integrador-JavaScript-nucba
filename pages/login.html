@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="./login.css" />
+    <link rel="stylesheet" href="./register.css" />
+
+</head>
+
+<body>
+   <header class="regresar">
+     <a href="../index.html">Regresar</a>
+   </header>
+    <main>
+        <form class="form__container" id="login--form" novalidate>
+            <p class="form__title">Iniciá Sesión</p>
+
+            <!-- Email -->
+            <div class="form__field ">
+                <input type="email" placeholder="Email" class="form__input" id="email" autocomplete="off" />
+            </div>
+            <!-- Email -->
+
+            <!-- Contraseña -->
+            <div class="form__field">
+                <input type="password" placeholder="Password" class="form__input" id="password" autocomplete="off" />
+            </div>
+            <!-- Contraseña -->
+
+            <small id="form__error"></small>
+            <input type="submit" class="form__submit__btn" value="Iniciar Sesión" />
+            <p class="form--redirect">¿No tenés cuenta? <a class="link--gradient" href="./register.html">Registrate</a>
+            </p>
+        </form>
+    </main>
+    <footer>
+    </footer>
+    <script src="../assets/login.js"></script>
+</body>
+
+</html>

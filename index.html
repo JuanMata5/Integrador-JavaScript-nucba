@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/82c3474411.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/customStyle.css">
+    <title>Document</title>
+</head>
+<body class=" body-rgb scroll-smooth">
+    <div id="overlay" class=" cursor-pointer fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-50 z-20 hidden"></div>
+
+
+
+    <header class="bg-cyan-800  ">
+        <div class="lg:hidden">
+        <div class="menu flex items-center justify-between  text-white  p-2 align-items-center ">
+            <button class="menu-button m-3   " id="menu-button">
+                <i class="fa fa-bars text-2xl text-center"></i>
+            </button>
+            <a class="flex text-center text-3xl text-white font-bold " href="">Electro House Store</a>
+            <li class="list-none p-3"><i id="cart-icon-mobile" class="fa-solid fa-cart-shopping text-xl text-center  cursor-pointer" style="color: #ffffff;"></i></li>
+            <div id="cartModal-mobile" class=" modalCart hidden fixed top-0 right-0 w-[550px] h-full bg-white shadow-md z-[100] transform translate-x-full transition duration-500 ease-in-out overflow-y-auto ">
+                <button id="closeButton-mobile" class="absolute top-2 right-2 text-2xl cursor-pointer">&times;</button>
+                <h2  class="p-4 z-50">Carrito de compras</h2>
+                <p >Total: $0</p>
+            </div>
+        </div>
+       
+        <nav class="menu-list-container flex-1  w-full    ">
+            <ul id="menu-list" class="show list-unstyled m-0 p-4 hidden bg-black w-full ">
+                <div class="links-select-container ">
+                    <button  class="text-lg text-white mb-4">All products <span id="showLinksSelect" class="l pl-20">^</span></button>
+                    <ul id="linksSelect" class="hidden">
+                        <li class="mb-4"><a href="#" class="text-white text-lg mt-4">> Air conditioner</a></li>
+                        <li class="mb-4"><a href="#"  class="text-white text-lg mb-4">> Kitchen appliances</a></li>
+                        <li class="mb-4"><a href="#"  class="text-white text-lg mt-4">> PCs & laptop</a></li>
+                        <li class="mb-4"><a href="#"  class="text-white text-lg mt-4">> Gadgets</a></li>
+                    </ul>
+                </div>
+                <li class="mb-4"><a href="#" class="text-white text-lg">  Home appliances</a></li>
+                <li class="mb-4"><a href="#" class="text-white text-lg">  Audio & video</a></li>
+                <li class="mb-4"><a href="#" class="text-white text-lg">  Refrigerator</a></li>
+                <li class="mb-4"><a href="#" class="text-white text-lg">  New arrivals</a></li>
+                <li class="mb-4"><a href="#" class="text-white text-lg">  Today's deal</a></li>
+                <li class="mb-4"><a href="#" class="text-white text-lg">  Gift cards</a></li>
+            </ul>        
+        </nav>            
+        </div>
+
+        <div class="w-full flex-col desktop">
+        <nav class="max-w-1280 mx-auto flex justify-between items-center w-full px-4">
+            <p class="text-white my-2">24/7 Customer service 1-800-234-5678</p>
+            <ul class="flex items-end gap-5">
+                <li class="list-unstyled"><a class="text-decoration-none text-white" href="">Shipping & return</a></li>
+                <li class="list-unstyled"><a class="text-decoration-none text-white" href="">Track order</a></li>
+            </ul>
+        </nav>
+    
+        <div class="bg-cyan-700 w-full p-5">
+            <nav class="max-w-1280 mx-auto flex justify-between items-center w-full px-4">
+                <a class="font-extrabold font-serif text-2xl text-white" href="">Electro House Store</a>
+                <div class="flex gap-5">
+                    <input class="p-2 outline-none translate-x-5 w-72 " type="search" placeholder="Buscar Productos..." id="">
+                    <button><i class="fa fa-search bg-black text-white p-4 " aria-hidden="true"></i></button>
+                </div>
+            </nav>
+        </div>
+
+       
+    
+        <div class="bg-cyan-700 w-full">
+            <nav class="max-w-1280 mx-auto flex justify-between items-center w-full px-4">
+                <ul class="flex justify-between list-unstyled m-0 w-full">
+                    <div class="relative group">
+                        <button id="showLinksSelectDesktop" class="text-lg text-white mb-4 ">All products <span class="l pl-4">^</span></button>
+                        <ul id="linksSelectDesktop" class="hidden z-10 top-[35px] absolute left-[-5px] mt-2 p-3 bg-cyan-700 rounded w-64">
+                            <li class="mb-4"><a href="#" class="text-white text-lg mt-4"> Air conditioner</a></li>
+                            <li class="mb-4"><a href="#" class="text-white text-lg mb-4"> Kitchen appliances</a></li>
+                            <li class="mb-4"><a href="#" class="text-white text-lg mt-4"> PCs & laptop</a></li>
+                            <li class="mb-4"><a href="#" class="text-white text-lg mt-4"> Gadgets</a></li>
+                            <li class="mb-4"><a href="#" class="text-white text-lg mt-4"> SmartPhone</a></li>
+                        </ul>
+                    </div>
+                    <li><a href="#" class="text-white text-lg">Home appliances</a></li>
+                    <li><a href="#" class="text-white text-lg">Audio & video</a></li>
+                    <li><a href="#" class="text-white text-lg">Refrigerator</a></li>
+                    <li><a href="#" class="text-white text-lg">New arrivals</a></li>
+                    <li><a href="#" class="text-white text-lg">Today's deal</a></li>
+                    <li><a href="#" class="text-white text-lg">Gift cards</a></li>
+                    <li><i id="wish-icon" class="fa-solid fa-heart text-xl  mr-[-30px] cursor-pointer" style="color: #ffffff;"></i></li>
+                    <li><a href="./pages/login.html"><i class="fa-solid fa-user-astronaut text-xl  cursor-pointer mr-[-30px]  " style="color: #ffffff;"></i></a></li>
+                    <li><i id="cart-icon" class="fa-solid fa-cart-shopping text-xl  cursor-pointer" style="color: #ffffff;"></i></li>
+                </ul>
+            </nav>
+        </div>
+       
+       
+        <div id="wishModal" class="wishCart hidden fixed top-0 right-0 left-0 w-[550px] h-screen bg-white shadow-md z-[100] transform -translate-y-full transition duration-500 ease-in-out   ">
+            <button id="closeWishButton" class="absolute top-2 right-2 text-2xl cursor-pointer">&times;</button>
+            <h2 class="p-4">Lista de deseos</h2>
+            <!-- Contenido del wishList aquí -->
+        </div>
+
+        <div id="cartModal" class=" modalCart hidden fixed top-0 right-0 w-[550px] h-full bg-white shadow-md z-[100] transform translate-x-full transition duration-500 ease-in-out overflow-y-auto ">
+            <button id="closeButton" class="absolute top-2 right-2 text-2xl cursor-pointer">&times;</button>
+            <h2  class="p-4 z-50">Carrito de compras</h2>
+            <p >Total: $0</p>
+        </div>
+
+    </div>
+    </div>
+    </header>
+
+    <main>
+        <section id="hero ">
+            <div class="relative ">
+                <img class="hero-img h-[35vw] w-full object-cover" src="./img/hero/jens-kreuter-ngMtsE5r9eI-unsplash.webp" alt="">
+              
+                <div class="hero-card absolute top-[19%] pt-8 left-[62.5%] w-[400px] h-[400px] bg-white p-5 flex flex-col gap-[12px] border-2 border-gray-200 ">
+                 <div class="flex gap-[5px] ">
+                    <img class="rounded-full w-10 h-10" src="./img/hero/000_334P84K-scaled.webp" alt="">
+                  <p class="mt-2 font-semibold">Messi</p>
+                </div>
+
+                  <h1 class="- text-5xl font-bold">The best home entertainment system is here</h1>
+                  <p class="text-gray-500">Lorem ipsum, consequatur fugiat officia, hic tempora non, porro odio impedit magnam neque. Doloremque optio</p>
+                  <button class="w-32 rounded-[5px] text-white p-2 bg-cyan-700 hover:bg-white transition-all .3s ease-in-out hover:text-black border-2 border-cyan-700">Shop Now</button>
+                </div>
+
+
+
+                <div class="beneficios flex max-w-1280 absolute justify-between mx-auto bg-white w-[1295px] h-[100px] mt-[-50px] left-1/2 top-[50%] transform -translate-x-1/2 translate-y-[330%] p-4 border-2 border-gray-200">
+
+                  <div class="flex mt-2 gap-3">
+                     <i class="fa-solid fa-truck-fast mt-2 text-2xl text-cyan-700"></i>
+                     <div class="flex flex-col">
+                     <h4>Free shipping</h4>
+                     <p class="beneficios-p text-sm text-gray-500" >When you spend $80 or more
+                     </p>
+                    </div>
+                  </div>
+                  
+                  <div  class="flex mt-2 gap-3">
+                     <i class="fa-solid fa-comment mt-2 text-2xl text-cyan-700"></i>
+                     <div class="flex flex-col">
+
+                      <h4>
+                        We are available 24/7</h4>
+                      <p class="beneficios-p text-sm text-gray-500">Need help? contact us anytime</p>
+                    </div>
+
+                    </div>
+
+                  <div  class="flex mt-2 gap-3">
+                     <i class="fa-solid fa-retweet mt-2 text-2xl text-cyan-700"></i>
+                     <div class="flex flex-col">
+                     <h4>
+                        Satisfied or return</h4>
+                     <p class="beneficios-p text-sm text-gray-500">Easy 30-day return policy</p>
+                  </div>
+                    </div>
+
+                  <div  class="flex mt-2 gap-3">
+                    <i class="fa-solid fa-credit-card mt-2 text-2xl text-cyan-700"></i>
+                    <div class="flex flex-col">
+                    <h4>
+                        100% secure payments</h4>
+                     <p class="beneficios-p text-sm text-gray-500">Visa, Mastercard, Stripe, PayPal</p>
+                  </div>
+                    </div>
+                </div>
+
+              </div>
+        </section>
+    
+        <section id="ofert" class="max-w-1280 mx-auto flex justify-between items-center w-full ">
+            <div class=" flex flex-col gap-2 p-2 cursor-pointer   transition-transform hover:shadow-lg hover:bg-white mt-24 hover:border-[1px] hover:border-gray-200">
+                <img class=" w-32 h-28 p-2 " src="./img/oferts/pngwing.com.png" alt="">
+                <p class="flex justify-center">Celulares</p>
+            </div>
+
+            <div class="flex flex-col gap-2 p-2 cursor-pointer  transition-transform hover:shadow-lg hover:bg-white  mt-24 hover:border-[1px] hover:border-gray-200">
+                <img class="w-32 h-28 p-2" src="./img/oferts/pngwing.com (1).png" alt="">
+                <p class="flex justify-center">Televisores</p>
+            </div>
+
+            <div class="flex flex-col gap-2 p-2 cursor-pointer  transition-transform hover:shadow-lg hover:bg-white mt-24 hover:border-[1px] hover:border-gray-200">
+                <img class="w-32 h-28 p-2" src="./img/oferts/pngwing.com (2).png" alt="">
+                <p class="flex justify-center">Climatización</p>
+            </div>
+
+            <div class="flex flex-col gap-2 p-2 cursor-pointer  transition-transform hover:shadow-lg hover:bg-white mt-24 hover:border-[1px] hover:border-gray-200">
+                <img class="w-32 h-28 p-2" src="./img/oferts/pngwing.com (3).png" alt="">
+                <p class="flex justify-center">Audio</p>
+            </div>
+
+            <div class="flex flex-col gap-2 p-2 cursor-pointer  transition-transform hover:shadow-lg hover:bg-white mt-24 hover:border-[1px] hover:border-gray-200">
+                <img class="w-32 h-28 p-2" src="./img/oferts/pngwing.com (4).png" alt="">
+                <p class="flex justify-center">Heladeras</p>
+            </div>
+
+            <div class="flex flex-col gap-2 p-2  cursor-pointer transition-transform hover:shadow-lg hover:bg-white mt-24 hover:border-[1px] hover:border-gray-200">
+                <img class="w-32 h-28 p-2 " src="./img/oferts/pngwing.com (5).png" alt="">
+                <p class="flex justify-center">Auriculares</p>
+            </div>
+
+            <div class=" card-item flex flex-col gap-2 p-2 cursor-pointer  transition-transform hover:shadow-lg hover:bg-white mt-24 hover:border-[1px] hover:border-gray-200">
+                <img class="w-32 h-28  p-2 " src="./img/oferts/pngwing.com (6).png" alt="">
+                <p class="flex justify-center">Belleza</p>
+            </div>
+
+            <div class="card-item flex flex-col gap-2 p-2 cursor-pointer  transition-transform hover:shadow-lg hover:bg-white mt-24 hover:border-[1px] hover:border-gray-200">
+                <img class="w-32 h-28 p-2" src="./img/oferts/pngwing.com (7).png" alt="">
+                <p class="flex justify-center">Notebooks</p>
+            </div>
+
+            <div class="card-item flex flex-col gap-2 p-2 cursor-pointer  transition-transform hover:shadow-lg hover:bg-white mt-24 hover:border-[1px] hover:border-gray-200">
+                <img class="w-32 h-28 p-2" src="./img/oferts/pngwing.com (8).png" alt="">
+                <p class="flex justify-center">Lavado</p>
+            </div>
+
+            <div class="card-item flex flex-col gap-2 p-2  cursor-pointer  transition-transform hover:shadow-lg hover:bg-white mt-24 hover:border-[1px] hover:border-gray-200">
+                <img class="w-32 h-28 p-2" src="./img/oferts/pngwing.com (9).png" alt="">
+                <p class="flex justify-center">Tablets</p>
+            </div>
+
+            <div class="card-item flex flex-col gap-2 p-2 cursor-pointer transition-transform hover:shadow-xl hover:bg-white mt-24 hover:border-[1px] hover:border-gray-200">
+                <img class="w-32 h-28 p-1" src="./img/oferts/pngwing.com (10).png" alt="">
+                <p class="flex justify-center">Pequeño</p>
+            </div>
+
+        
+        </section>
+
+        <section id="oferta-box" class="max-w-1280 mx-auto flex  w-full pt-16">
+            <div class=" flex w-full h-[50vh] bg-white border-2 border-gray-200 ">
+                <div class=" w-[26%] h-full bg-cyan-600  ">
+                   <div class="t translate-y-40 flex flex-col items-center justify-center">
+                    <h2 class="text-[60px] font-bold text-white">Ofertas</h2>
+                    <h5 class="text-2xl text-white">Por tiempo limitado</h5>
+                </div>
+                </div>
+                
+                <div class="flex ">
+                    <div class="w-full flex flex-col gap-2">
+                        <img src="./img/oferta-box/6b83516c1b4b2a12eb7af1ee1379.webp" alt="">
+                       <div class="t translate-x-7">
+                        <p class=". text-sm ">Notebook Asus 14” Celeron 4GB 128GB </p>
+                        
+                    </div>
+                        <div class="flex flex-col items-center justify-center ">
+                        <span class="text-lg"> <span class=". line-through text-gray-400 font-bold">$89.999</span> <span class=". text-base bg-cyan-600 text-white p-[2px] rounded-sm">44% OFF</span></span>
+                        <span class="text-xl font-bold">$49.999</span>
+                       </div> 
+
+                        <div class="flex gap-5 items-center justify-center">
+                            <p class="b bg-green-100 p-[2px] text-sm">Llega mañana</p>
+                            <p class="b bg-green-100 p-[2px] text-sm">¡Retíralo YA!</p>
+                        </div>            
+                    </div>
+
+                    <div class="w-full flex flex-col gap-2">
+                        <img src="./img/oferta-box/13a6415e62862d5fb8b51db32490.webp" alt="">
+                       <div class="t translate-x-7">
+                        <p class=". text-sm ">Notebook Asus 14” Celeron 4GB 128GB </p>
+      
+                    </div>
+                        <div class="flex flex-col items-center justify-center ">
+                            <span class="text-lg"> <span class=". line-through text-gray-400 font-bold">$89.999</span> <span class=". text-base bg-cyan-600 text-white p-[2px] rounded-sm">44% OFF</span></span>
+                        <span class="text-xl font-bold">$49.999</span>
+                       </div> 
+
+                        <div class="flex gap-5 items-center justify-center">
+                            <p class="b bg-green-100 p-[2px] text-sm">Envio <span class=". text-green-900 font-bold">GRATIS</span></p>
+                            <p class="b bg-green-100 p-[2px] text-sm">¡Retíralo YA!</p>
+                        </div>            
+                    </div>
+
+                    <div class="card-ofert-limited w-full flex flex-col gap-2">
+                        <img src="./img/oferta-box/737c2bd806d8e7b06cc35c3f82b2.webp" alt="">
+                       <div class="t translate-x-7">
+                        <p class=". text-sm w-[50%]">Notebook Asus 14” Celeron 4GB 128GB </p>
+                        <p class="text-sm translate-x-4 w-[50%]  ">Vivobook Go 14 E410MA-BV1181W</p>
+                    </div>
+                        <div class="flex flex-col items-center justify-center ">
+                            <span class="text-lg"> <span class=". line-through text-gray-400 font-bold">$89.999</span> <span class=". text-base bg-cyan-600 text-white p-[2px] rounded-sm">44% OFF</span></span>
+                        <span class="text-xl font-bold">$49.999</span>
+                       </div> 
+
+                        <div class="flex gap-5 items-center justify-center">
+                            <p class="b bg-green-100 p-[2px] text-sm">Envio <span class=". text-green-900 font-bold">GRATIS</span></p>
+                            <p class="b bg-green-100 p-[2px] text-sm">¡Retíralo YA!</p>
+                        </div>            
+                    </div>
+                    
+             
+            </div>
+        </section>
+
+        <section id="fijate" class="max-w-1280 mx-auto flex justify-between gap-8  w-full pt-16">
+           
+
+           <div class=" relative flex flex-col w-full h-[30vh] shadow-sm border-2 cursor-pointer hover:shadow-xl transition-all ease-in-out ">
+            <div class="absolute flex mx-auto  flex-col top-6 left-[260px] gap-3 w-[310px]">
+                <h2 class="text-[25px] font-bold"><i class="fa-solid fa-magnifying-glass "></i>Fijate</h2>
+                <h3 class="bg-cyan-600 text-white text-2xl p-1 font-bold ">OFERTAS EN EL AIRE LIBRE</h3>
+                <p class="text-xl font-bold">Piletas, parrillas, muebles de exterior, camping y bicicletas con hasta 40% off.</p>
+                <a class="text-sm text-center border-[1px] border-cyan-600 p-2 w-[30%]  hover:bg-cyan-600 transition-all ease-in-out hover:text-white">VER MAS</a>
+            </div>
+            
+           
+                <div class=" absolute flex  flex-col justify-center item-center text-center  bg-cyan-600 h-[180px] w-[200px] rounded-2xl p-3   translate-x-4 top-12 left-3" >
+                <div class="flex flex-col gap-4 ">
+                    <h5 class="bg-white p-1 rounded-xl  font-bold text-base  text-cyan-600 translate-y-4"><i class="fa-solid fa-magnifying-glass"></i>Cyber Monday</h5>
+                    <div class="flex flex-col ">
+                    <span class=". bg-blue-600 w-[50px] p-1 text-center text-sm translate-y-2 text-white rounded-lg ">HASTA</span>
+                    <span class="text-[50px] font-bold text-white ">$19999</span>
+                </div>
+                </div>
+                </div>       
+           </div>
+             
+           <div class=" relative flex flex-col w-full h-[30vh] shadow-sm border-2 cursor-pointer hover:shadow-xl transition-all ease-in-out ">
+            <div class="absolute flex mx-auto  flex-col top-6 left-[260px] gap-3 w-[310px]">
+                <h2 class="text-[25px] font-bold"><i class="fa-solid fa-magnifying-glass "></i>Fijate</h2>
+                <h3 class="bg-cyan-600 text-white text-2xl p-1 font-bold ">OFERTAS EN EL AIRE LIBRE</h3>
+                <p class="text-xl font-bold">Piletas, parrillas, muebles de exterior, camping y bicicletas con hasta 40% off.</p>
+                <a class="text-sm text-center border-[1px] border-cyan-600 p-2 w-[30%]  hover:bg-cyan-600 transition-all ease-in-out hover:text-white">VER MAS</a>
+            </div>
+            
+           
+                <div class=" absolute flex  flex-col justify-center item-center text-center  bg-cyan-600 h-[180px] w-[200px] rounded-2xl p-3   translate-x-4 top-12 left-3" >
+                <div class="flex flex-col gap-4 ">
+                    <h5 class="bg-white p-1 rounded-xl  font-bold text-base  text-cyan-600 translate-y-4"><i class="fa-solid fa-magnifying-glass"></i>Cyber Monday</h5>
+                    <div class="flex flex-col ">
+                    <span class=". bg-blue-600 w-[50px] p-1 text-center text-sm translate-y-2 text-white rounded-lg ">HASTA</span>
+                    <span class="text-[50px] font-bold text-white ">$19999</span>
+                </div>
+                </div>
+                </div>       
+           </div>
+             
+
+           
+        </section>
+      
+       
+
+         <section id="cards" class="relative max-w-1280  flex mx-auto  justify-between gap-2 w-full pt-16">
+            <div class="w-full flex flex-col  border-2">
+                <img class="w-[500px] h-[200px] object-cover" src="./img/cards-people/brooke-cagle-ZCSc8hoZrtw-unsplash.jpg" alt="">
+                <p class="p-2  font-bold">Hasta 25% off en artículos seleccionados de tecnología. Fijate!</p>
+            </div>
+
+            <div  class="w-full flex flex-col  border-2">
+                <img class="w-[500px] h-[200px] object-cover" src="./img/cards-people/let-s-kick-15POVA3hr60-unsplash.jpg" alt="">
+                <p class="p-2  font-bold">Hasta 40% off y envío en 24hs en bicicletas seleccionadas. Fijate!</p>
+            </div>
+
+            <div  class="w-full flex flex-col  border-2">
+                <img class="w-[500px] h-[200px] object-cover" src="./img/cards-people/ronix-tools-Nn2mg1lUbZc-unsplash.jpg" alt="">
+                <p class=" p-2 font-bold">Más de 3.000 herramientas con hasta 45% off, 6 sin interés y envío en 24hs. Fijate!
+                </p>
+            </div>
+         </section>
+
+         <section id="carousel-container-new" class="relative max-w-1280 mx-auto flex flex-col justify-between gap-2 w-full pt-16">
+            <h4 class="font-bold text-2xl">Nuestros productos destacados</h4>
+            <div id="card-container-new" class="flex transition-transform duration-500 ease-in-out overflow-hidden">
+                <div class=" relative cardNew w-[300px] h-[450px] bg-white border-2 p-4 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all ease-in-out">
+                    <img class="w-[300px] h-[300px]" src="./img/oferta-box/heladera.webp" alt="">
+                    <div class="flex justify-center items-center">
+                        <p class="text-sm text-center productName">Smart TV QLED Samsung 65” QN65Q65CAGC</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <span class="text-lg"><span class="line-through text-gray-400 font-bold">$89.999</span> <span class="text-base bg-cyan-600 text-white p-[2px] rounded-sm">44% OFF</span></span>
+                        <span class="text-xl font-bold productPrice">$49.999</span>
+                    </div> 
+                    <div class="flex flex-col gap-5 items-center justify-center">
+                        <p class="b bg-green-100 p-[2px] text-sm">Llega mañana</p>
+                        <p class="b bg-green-100 p-[2px] text-sm"2>¡Retíralo YA!</p>
+                        <button id="btnAgregar10" class="absolute bg-blue-500 text-white p-1 rounded-full text-sm w-[25px] right-[10px]  top-[10px]" onclick="agregarAlCarrito('Smart TV 55” QLED 4K Samsung QN55Q65BAGCF', 49999, 'img/oferta-box/heladera.webp', 10)"><i class="fa-solid fa-plus"></i></button>
+                    </div>                
+                </div>
+
+
+                <div class=" relative cardNew w-[300px] h-[450px] bg-white border-2 p-4 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all ease-in-out">
+                    <img class="w-[300px] h-[300px]" src="./img/oferta-box/cocina.webp" alt="">
+                    <div class="flex justify-center items-center">
+                        <p class="text-sm text-center productName">Smart TV QLED Samsung 65” QN65Q65CAGC</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <span class="text-lg"><span class="line-through text-gray-400 font-bold">$89.999</span> <span class="text-base bg-cyan-600 text-white p-[2px] rounded-sm">44% OFF</span></span>
+                        <span class="text-xl font-bold productPrice">$49.999</span>
+                    </div> 
+                    <div class="flex flex-col gap-5 items-center justify-center">
+                        <p class="b bg-green-100 p-[2px] text-sm">Llega mañana</p>
+                        <p class="b bg-green-100 p-[2px] text-sm">¡Retíralo YA!</p>
+                        <button id="btnAgregar9" class="absolute bg-blue-500 text-white p-1 rounded-full text-sm w-[25px] right-[10px]  top-[10px]" onclick="agregarAlCarrito('Smart TV 55” QLED 4K Samsung QN55Q65BAGCF', 49999, 'img/oferta-box/cocina.webp', 9)"><i class="fa-solid fa-plus"></i></button>
+                    </div>                
+                </div>
+
+
+                <div class=" relative cardNew w-[300px] h-[450px] bg-white border-2 p-4 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all ease-in-out">
+                    <img class="w-[300px] h-[300px]" src="./img/oferta-box/secador.webp" alt="">
+                    <div class="flex justify-center items-center">
+                        <p class="text-sm text-center productName">Smart TV QLED Samsung 65” QN65Q65CAGC</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <span class="text-lg"><span class="line-through text-gray-400 font-bold">$89.999</span> <span class="text-base bg-cyan-600 text-white p-[2px] rounded-sm">44% OFF</span></span>
+                        <span class="text-xl font-bold productPrice">$49.999</span>
+                    </div> 
+                    <div class="flex flex-col gap-5 items-center justify-center">
+                        <p class="b bg-green-100 p-[2px] text-sm">Llega mañana</p>
+                        <p class="b bg-green-100 p-[2px] text-sm">¡Retíralo YA!</p>
+                        <button id="btnAgregar8" class="absolute bg-blue-500 text-white p-1 rounded-full text-sm w-[25px] right-[10px]  top-[10px]" onclick="agregarAlCarrito('Smart TV 55” QLED 4K Samsung QN55Q65BAGCF', 49999, 'img/oferta-box/secador.webp', 8)"><i class="fa-solid fa-plus"></i></button>
+                    </div>                
+                </div>
+
+
+                <div class=" relative cardNew w-[300px] h-[450px] bg-white border-2 p-4 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all ease-in-out">
+                    <img class="w-[300px] h-[300px]" src="./img/oferta-box/notebook2.webp" alt="">
+                    <div class="flex justify-center items-center">
+                        <p class="text-sm text-center productName">Smart TV QLED Samsung 65” QN65Q65CAGC</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <span class="text-lg"><span class="line-through text-gray-400 font-bold">$89.999</span> <span class="text-base bg-cyan-600 text-white p-[2px] rounded-sm">44% OFF</span></span>
+                        <span class="text-xl font-bold productPrice">$49.999</span>
+                    </div> 
+                    <div class="flex flex-col gap-5 items-center justify-center">
+                        <p class="b bg-green-100 p-[2px] text-sm">Llega mañana</p>
+                        <p class="b bg-green-100 p-[2px] text-sm">¡Retíralo YA!</p>
+                        <button id="btnAgregar7" class="absolute bg-blue-500 text-white p-1 rounded-full text-sm w-[25px] right-[10px]  top-[10px]" onclick="agregarAlCarrito('Smart TV 55” QLED 4K Samsung QN55Q65BAGCF', 49999, 'img/oferta-box/notebook2.webp', 7)"><i class="fa-solid fa-plus"></i></button>
+                    </div>                
+                </div>
+
+
+                <div class=" relative cardNew w-[300px] h-[450px] bg-white border-2 p-4 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all ease-in-out">
+                    <img class="w-[300px] h-[300px]" src="./img/oferta-box/celular2.webp" alt="">
+                    <div class="flex justify-center items-center">
+                        <p class="text-sm text-center productName">Smart TV QLED Samsung 65” QN65Q65CAGC</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <span class="text-lg"><span class="line-through text-gray-400 font-bold">$89.999</span> <span class="text-base bg-cyan-600 text-white p-[2px] rounded-sm">44% OFF</span></span>
+                        <span class="text-xl font-bold productPrice">$49.999</span>
+                    </div> 
+                    <div class="flex flex-col gap-5 items-center justify-center">
+                        <p class="b bg-green-100 p-[2px] text-sm">Llega mañana</p>
+                        <p class="b bg-green-100 p-[2px] text-sm">¡Retíralo YA!</p>
+                        <button id="btnAgregar6" class="absolute bg-blue-500 text-white p-1 rounded-full text-sm w-[25px] right-[10px]  top-[10px]" onclick="agregarAlCarrito('Smart TV 55” QLED 4K Samsung QN55Q65BAGCF', 49999, 'img/oferta-box/celular2.webp', 6)"><i class="fa-solid fa-plus"></i></button>
+                    </div>                
+                </div>
+
+
+                <div class=" relative cardNew w-[300px] h-[450px] bg-white border-2 p-4 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all ease-in-out">
+                    <img class="w-[300px] h-[300px]" src="./img/oferta-box/tablet.webp" alt="">
+                    <div class="flex justify-center items-center">
+                        <p class="text-sm text-center productName">Smart TV QLED Samsung 65” QN65Q65CAGC</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <span class="text-lg"><span class="line-through text-gray-400 font-bold">$89.999</span> <span class="text-base bg-cyan-600 text-white p-[2px] rounded-sm">44% OFF</span></span>
+                        <span class="text-xl font-bold productPrice">$49.999</span>
+                    </div> 
+                    <div class="flex flex-col gap-5 items-center justify-center">
+                        <p class="b bg-green-100 p-[2px] text-sm">Llega mañana</p>
+                        <p class="b bg-green-100 p-[2px] text-sm">¡Retíralo YA!</p>
+                        <button id="btnAgregar5" class="absolute bg-blue-500 text-white p-1 rounded-full text-sm w-[25px] right-[10px]  top-[10px]" onclick="agregarAlCarrito('Smart TV 55” QLED 4K Samsung QN55Q65BAGCF', 49999, 'img/oferta-box/tablet.webp', 5)"><i class="fa-solid fa-plus"></i></button>
+                    </div>                
+                </div>
+
+
+                <div class=" relative cardNew w-[300px] h-[450px] bg-white border-2 p-4 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all ease-in-out">
+                    <img class="w-[300px] h-[300px]" src="./img/oferta-box/smart2.webp" alt="">
+                    <div class="flex justify-center items-center">
+                        <p class="text-sm text-center productName">Smart TV QLED Samsung 65” QN65Q65CAGC</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <span class="text-lg"><span class="line-through text-gray-400 font-bold">$89.999</span> <span class="text-base bg-cyan-600 text-white p-[2px] rounded-sm">44% OFF</span></span>
+                        <span class="text-xl font-bold productPrice">$49.999</span>
+                    </div> 
+                    <div class="flex flex-col gap-5 items-center justify-center">
+                        <p class="b bg-green-100 p-[2px] text-sm">Llega mañana</p>
+                        <p class="b bg-green-100 p-[2px] text-sm">¡Retíralo YA!</p>
+                        <button id="btnAgregar4" class="absolute bg-blue-500 text-white p-1 rounded-full text-sm w-[25px] right-[10px]  top-[10px]" onclick="agregarAlCarrito('Smart TV 55” QLED 4K Samsung QN55Q65BAGCF', 49999, 'img/oferta-box/smart2.webp', 4)"><i class="fa-solid fa-plus"></i></button>
+                    </div>                
+                </div>
+
+
+                <div class=" relative cardNew w-[300px] h-[450px] bg-white border-2 p-4 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all ease-in-out">
+                    <img class="w-[300px] h-[300px]" src="./img/oferta-box/smart.webp" alt="">
+                    <div class="flex justify-center items-center">
+                        <p class="text-sm text-center productName">Smart TV QLED Samsung 65” QN65Q65CAGC</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <span class="text-lg"><span class="line-through text-gray-400 font-bold">$89.999</span> <span class="text-base bg-cyan-600 text-white p-[2px] rounded-sm">44% OFF</span></span>
+                        <span class="text-xl font-bold productPrice">$49.999</span>
+                    </div> 
+                    <div class="flex flex-col gap-5 items-center justify-center">
+                        <p class="b bg-green-100 p-[2px] text-sm">Llega mañana</p>
+                        <p class="b bg-green-100 p-[2px] text-sm">¡Retíralo YA!</p>
+                        <button id="btnAgregar3" class="absolute bg-blue-500 text-white p-1 rounded-full text-sm w-[25px] right-[10px]  top-[10px]" onclick="agregarAlCarrito('Smart TV 55” QLED 4K Samsung QN55Q65BAGCF', 49999, 'img/oferta-box/smart.webp', 3)"><i class="fa-solid fa-plus"></i></button>
+                    </div>                
+                </div>
+
+
+                <div class=" relative cardNew w-[300px] h-[450px] bg-white border-2 p-4 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all ease-in-out">
+                    <img class="w-[300px] h-[300px]" src="./img/oferta-box/celular.webp" alt="">
+                    <div class="flex justify-center items-center">
+                        <p class="text-sm text-center productName">Celular Motorola Moto G14 128GB Orchid Tint</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <span class="text-lg"><span class="line-through text-gray-400 font-bold">$89.999</span> <span class="text-base bg-cyan-600 text-white p-[2px] rounded-sm">44% OFF</span></span>
+                        <span class="text-xl font-bold productPrice">$49.999</span>
+                    </div> 
+                    <div class="flex flex-col gap-5 items-center justify-center">
+                        <p class="b bg-green-100 p-[2px] text-sm">Llega mañana</p>
+                        <p class="b bg-green-100 p-[2px] text-sm">¡Retíralo YA!</p>
+                        <button  id="btnAgregar2" class="absolute bg-blue-500 text-white p-1 rounded-full text-sm w-[25px] right-[10px]  top-[10px]" onclick="agregarAlCarrito('Celular Motorola Moto G14 128GB Orchid Tint', 120000, 'img/oferta-box/celular.webp', 2)"><i class="fa-solid fa-plus"></i></button>
+                    </div>                
+                </div>
+
+
+                <div class=" relative cardNew w-[300px] h-[450px] bg-white border-2 p-4 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all ease-in-out">
+                    <img class="w-[300px] h-[300px]" src="./img/oferta-box/6b83516c1b4b2a12eb7af1ee1379.webp" alt="">
+                    <div class="flex justify-center items-center">
+                        <p class="text-sm text-center productName">Smart TV 55” QLED 4K Samsung QN55Q65BAGCF</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <span class="text-lg"><span class="line-through text-gray-400 font-bold">$89.999</span> <span class="text-base bg-cyan-600 text-white p-[2px] rounded-sm">44% OFF</span></span>
+                        <span class="text-xl font-bold productPrice">$49.999</span>
+                    </div> 
+                    <div class="flex flex-col gap-5 items-center justify-center">
+                        <p class="b bg-green-100 p-[2px] text-sm">Llega mañana</p>
+                        <p class="b bg-green-100 p-[2px] text-sm">¡Retíralo YA!</p>
+                        <button id="btnAgregar1" class="absolute bg-blue-500 text-white p-1 rounded-full text-sm w-[25px] right-[10px]  top-[10px]" onclick="agregarAlCarrito('Smart TV 55” QLED 4K Samsung QN55Q65BAGCF', 49999, 'img/oferta-box/6b83516c1b4b2a12eb7af1ee1379.webp', 1)"><i class="fa-solid fa-plus"></i></button>
+
+
+                    </div>                
+                </div>
+
+            </div>
+            <button id="prevBtnNew" onclick="prevSlideNew()">❮ Prev</button>
+            <button id="nextBtnNew" onclick="nextSlideNew()">Next ❯</button>
+          </section>
+
+          <section id="cards-img" class="relative max-w-1280 mx-auto flex  justify-between gap-7 w-full pt-16">
+            
+            <div class=" relative flex flex-col w-full h-[200px] shadow-sm border-2 cursor-pointer hover:shadow-xl transition-all ease-in-out ">
+                
+                <div class="cards-img-content  absolute flex mx-auto  flex-col top-6 left-[300px] gap-3 w-[310px]">
+               
+                    <h3 class="bg-cyan-600 text-white text-2xl p-1 font-bold ">FIJATE EN ELECTRO</h3>
+                    <p class="text-xl font-bold">Hasta 30% off y envío en 24hs en seleccionados de línea blanca.</p>
+                    <a class="text-sm text-center border-[1px] border-cyan-600 p-2 w-[30%]  hover:bg-cyan-600 transition-all ease-in-out hover:text-white">VER MAS</a>
+                </div>
+               <div class="w-[45%] h-[100%] ">
+                <img class="w-full h-full"  src="./img/cards-people/brooke-cagle-ZCSc8hoZrtw-unsplash.jpg" alt="">
+               </div>
+               </div>
+
+               <div class=" relative flex flex-col w-full h-[200px] shadow-sm border-2 cursor-pointer hover:shadow-xl transition-all ease-in-out ">
+                
+                <div class="cards-img-content  absolute flex mx-auto  flex-col top-6 left-[300px] gap-3 w-[310px]">
+               
+                    <h3 class="bg-cyan-600 text-white text-2xl p-1 font-bold ">FIJATE EN ELECTRO</h3>
+                    <p class="text-xl font-bold">Hasta 30% off y envío en 24hs en seleccionados de línea blanca.</p>
+                    <a class="text-sm text-center border-[1px] border-cyan-600 p-2 w-[30%]  hover:bg-cyan-600 transition-all ease-in-out hover:text-white">VER MAS</a>
+                </div>
+               <div class="w-[45%] h-[100%]">
+                <img class="w-full h-full"  src="./img/cards-people/brooke-cagle-ZCSc8hoZrtw-unsplash.jpg" alt="">
+               </div>
+               </div>
+          </section>
+          
+          <section id="people" class="relative max-w-1280 mx-auto flex flex-wrap  justify-between gap-9 w-full pt-16">
+      
+            <div class="people-cards flex flex-col gap-5 w-[400px] h-[200px] border-2 p-3 ">
+                <div class="flex">
+                <span><i class="fa-solid fa-star text-cyan-500"></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500"></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500"></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500"></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500"></i></span>
+            </div>
+                <p>Dolores porro laboriosam molestias est quo. Et et eos. Ab error modi labore sed eaque est. Quaerat aut est fugiat.</p>
+            <div class="flex  items-center gap-2">
+                <img class="rounded-full w-10 h-10" src="./img/hero/000_334P84K-scaled.webp" alt="">
+                <h4 class="text-center">Rafael Stokes</h4>
+            </div>
+         </div>
+
+            <div class="people-cards flex flex-col gap-5 w-[400px] h-[200px] border-2 p-3 ">
+                <div class="flex">
+                <span><i class="fa-solid fa-star text-cyan-500"></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500"></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500"></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500"></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500"></i></span>
+            </div>
+                <p>Dolores porro laboriosam molestias est quo. Et et eos. Ab error modi labore sed eaque est. Quaerat aut est fugiat.</p>
+            <div class="flex  items-center gap-2">
+                <img class="rounded-full w-10 h-10" src="./img/hero/000_334P84K-scaled.webp" alt="">
+                <h4 class="text-center">Rafael Stokes</h4>
+            </div>
+         </div>
+            <div class="people-cards flex flex-col gap-5 w-[400px] h-[200px] border-2 p-3 ">
+                <div class="flex">
+                <span><i class="fa-solid fa-star text-cyan-500" ></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500" ></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500" ></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500" ></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500" ></i></span>
+            </div>
+                <p>Dolores porro laboriosam molestias est quo. Et et eos. Ab error modi labore sed eaque est. Quaerat aut est fugiat.</p>
+            <div class="flex  items-center gap-2">
+                <img class="rounded-full w-10 h-10" src="./img/hero/000_334P84K-scaled.webp" alt="">
+                <h4 class="text-center">Rafael Stokes</h4>
+            </div>
+         </div>
+            <div class="people-cards flex flex-col gap-5 w-[400px] h-[200px] border-2 p-3 ">
+                <div class="flex">
+                <span><i class="fa-solid fa-star text-cyan-500"></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500"></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500"></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500"></i></span>
+                <span><i class="fa-solid fa-star text-cyan-500"></i></span>
+            </div>
+                <p>Dolores porro laboriosam molestias est quo. Et et eos. Ab error modi labore sed eaque est. Quaerat aut est fugiat.</p>
+            <div class="flex  items-center gap-2">
+                <img class="rounded-full w-10 h-10" src="./img/hero/000_334P84K-scaled.webp" alt="">
+                <h4 class="text-center">Rafael Stokes</h4>
+            </div>
+         </div>
+
+
+          </section>
+          
+          <section class=" relative max-w-1280 mx-auto flex flex-wrap  justify-between gap-9 w-full pt-16">
+             <div class="contact flex w-[100%] justify-between items-center border-t-[1px]">
+                <span class="flex flex-col">
+                    <a class="text-center" href="">Expert advice</a>
+                    <h3 class="text-3xl font-bold text-center">123-456-7890</h3>
+                </span>
+
+                <span class="flex flex-col">
+                    <a  class="text-center" href="">Customer service</a>
+                    <h3 class="text-3xl font-bold text-center">1-222-345-6789</h3>
+                </span>
+
+                <span class="flex flex-col">
+                    <a   class="text-center"  href="">
+                        Have any questions?</a>
+                    <h3 class="text-3xl font-bold text-center">Contact us</h3>
+                </span>
+                
+                <img class="contact-img" src="./img/cards-people/electronic-store-support-team.png" alt="">
+             </div>
+          </section>
+
+          <section id="Suscribe" class="relative items-center  max-w-1280 mx-auto flex justify-between w-full h-[100px]">
+            <div class="flex gap-20">
+              <span class="flex flex-col ">
+                <h4 class="font-bold text-3xl">
+                    Subscribe to our  
+                </h4>
+                <h4 class="flex font-bold text-3xl justify-center items center">newsletter</h4>
+            </span>
+                <div class="border-r-2 h-[70px]"></div>
+            </div>
+
+            <div>
+                <p>Sign up for all the latest news and special offers</p>
+            </div>
+
+            <div>
+              <form action="">
+                <input class=" border-[1px] p-3 w-[400px]" type="email" placeholder="Email">
+                <input class="bg-black text-white p-3" type="submit" value="Suscribe">
+              </form>
+            </div>
+          </section>
+    </main>
+
+    <footer id="footer" class=" border-t-[1px] w-full h-[300px]" >
+    <div class="footer-content relative  pt-14 max-w-1280  mx-auto flex   justify-between  w-full">
+        <div class="title-footer flex flex-col ">
+            <h2 class="text-cyan-700 text-2xl font-bold">Electro </h2>
+            <h2 class="text-cyan-700 text-2xl font-bold">House Store</h2>
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <h4 class="text-cyan-700 text-xl">Compra Segura</h4>
+            <a href="">¿Quiénes somos?</a>
+            <a href="">Lista de precios</a>
+            <a href="">Términos y Condiciones</a>
+            <a href="">Política de Privacidad</a>
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <h4 class="text-cyan-700 text-xl">Ayuda</h4>
+            <a href="">¿Cómo Comprar?</a>
+            <a href="">Cambios y Devoluciones</a>
+            <a href="">Boton de Arrepentimiento</a>
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <h4 class="text-cyan-700 text-xl">Contacto</h4>
+            <a href="">0800-666-6266
+            </a>
+            <a href="">Lunes a Sábado 9 a 19 hs</a>
+            <a href=""> contacto@compracierta.com.ar</a>
+            <a href="">Libro de quejas online</a>
+            <a href="">Preguntas Frecuentes</a>
+            <a href="">Centro de Descargas</a>
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <h4 class="text-cyan-700 text-xl">Medios de Pago</h4>
+            <p>Credito</p>
+            <img class="w-[400px]" src="./img/footer/assets_footer_metodos-de-pago-footer.png" alt="">
+            <p>Todos los dias</p>
+        </div>
+</div>
+    </footer>
+    <script src="./JS/index.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        /** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: ["./src/**/*.{html,js}"],
+    theme: {
+      extend: {
+        backgroundColor: {
+          'body-rgb': 'rgb(25, 225, 225)', // Cambia estos valores por los que necesites
+        },
+        maxWidth: {
+          '1280': '1280px',
+          '990': '990px',
+        },
+        minWidth: {
+          '320': '320px',
+          '956': '956px',
+        },
+        transitionDuration: {
+          '1000': '1000ms',
+        sectionHidden: {
+          'hidden': 'display:none ',
+        },
+      },
+    },
+    plugins: [],
+  }
+  }
+      </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,532 @@
+body {
+  scroll-behavior: smooth;
+}
+
+#carousel-container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  #card-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    -webkit-transition: transform 0.5s ease-in-out;
+    -moz-transition: transform 0.5s ease-in-out;
+    -ms-transition: transform 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out;
+}
+  
+  .card {
+    width: 100%;
+    min-width: 238px;
+    min-height: 400px;
+    box-sizing: border-box;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  #prevBtn, #nextBtn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #333;
+    background: rgba(128, 128, 128, 0.5); /* Fondo gris transparente */
+    border: none;
+    outline: none;
+  }
+  
+  #prevBtn {
+    left: 10px;
+    top: 55%;
+    height: 50px;
+    padding: 10px;
+    color: black;
+  }
+  
+  #nextBtn {
+    right: 20px;
+    top: 55%;
+    height: 50px;
+    padding: 10px;
+    color: black;
+  }
+
+
+#carousel-container-new {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+  }
+  
+
+  .cardNew {
+    width: 100%;
+    min-width: 238px;
+    min-height: 400px;
+    box-sizing: border-box;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+ 
+  
+  #prevBtnNew  , #nextBtnNew   {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #333;
+    background: rgba(128, 128, 128, 0.5); /* Fondo gris transparente */
+    border: none;
+    outline: none;
+  }
+  
+  #prevBtnNew   {
+    left: 10px;
+    top: 55%;
+    height: 50px;
+    padding: 10px;
+    color: black;
+  }
+  
+  #nextBtnNew   {
+    right: 20px;
+    top: 55%;
+    height: 50px;
+    padding: 10px;
+    color: black;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  /* Oculta el botón "Prev" por defecto si está en la primera página */
+#prevBtnNew.hidden {
+  display: none;
+}
+
+/* Oculta el botón "Next" por defecto si está en la última página */
+#nextBtnNew.hidden {
+  display: none;
+}
+
+.carrito-imagen {
+  width: 80px; /* Ajusta el tamaño de la imagen según tus necesidades */
+  height: 50px; /* Ajusta el tamaño de la imagen según tus necesidades */
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+  object-fit: cover; /* Ajusta cómo se ajusta la imagen dentro del contenedor */
+  overflow: hidden;
+}
+
+.carrito-list {
+  list-style: none;
+  padding: 0;
+  overflow: hidden;
+  max-height: calc(100% - 160px); /* Altura máxima, ajusta según tus necesidades */
+  overflow-y: auto;
+
+}
+
+/* Estilos para cada elemento de la lista en el carrito */
+.carrito-item {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  height: 100px; /* Ajusta el tamaño de la imagen según tus necesidades */
+  overflow: hidden;
+  
+}
+
+.mensajeVacio {
+  height: 100%; /* Establece la altura del contenedor al 100% de la altura del viewport */
+  display: flex;
+  align-items: center;
+  margin: auto;
+  padding-top: 70%;
+  font-size: 30px;
+  justify-content: center
+   
+}
+
+.seguirComprando {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  /* Experimenta con estas propiedades para ajustar la posición */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000; /* Ajusta el índice z si es necesario */
+}
+
+.total { 
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  position: fixed;
+  bottom: 110px;
+  left: 0;
+  width: 100%;
+  background-color: white; 
+  padding: 15px;
+  font-weight: bold;
+}
+
+
+
+  
+.showCart {
+  background-color: black;
+  position: fixed;
+  bottom: 55px;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  color: white;
+  text-align: center;
+}
+
+.buy {
+  border-top: 1px solid #ccc;
+  background-color: black;
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  color: white;
+  text-align: center;
+}
+
+
+
+
+.restarBoton {
+  position: relative;
+  right:85px;
+  font-size: 30px;
+}
+
+.cantidad {
+  position: relative;
+  right:75px;
+  top: -2px;
+  font-size: 20px;
+}
+
+.sumarBoton {
+  position: relative;
+  right:65px;
+  font-size: 30px;
+}
+
+.eliminarBoton {
+  top: -40px;
+  right: -230px;
+  position: relative
+  
+}
+
+.precioProducto{
+  right: -170px;
+  font-weight: bold;
+  position: relative
+  
+}
+
+@media (min-width: 320px) and (max-width: 576px) {
+  #cards-img {
+    display: flex;
+    flex-wrap: wrap;
+   }
+  
+   .cards-img-content {
+    transform: translateX(80px);
+    -webkit-transform: translateX(80px);
+    -moz-transform: translateX(80px);
+    -ms-transform: translateX(80px);
+    -o-transform: translateX(80px);
+} 
+
+.desktop {
+  display: none;
+}
+
+.hero-card {
+  left: 70px;
+}
+
+.hero-img {
+  height: 80vh;
+}
+
+.beneficios {
+  width: 100%;
+}
+
+#fijate {
+display: flex;
+flex-wrap: wrap;
+}
+
+#fijate p {
+  font-size: 16px;
+}
+
+#fijate h3 {
+  font-size: 18px;
+  width: 250px;
+}
+
+#cards {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+}
+
+#cards img {
+width: 100%;
+object-fit: cover;
+}
+
+#cards-img {
+display: flex;
+flex-wrap: wrap;
+}
+
+.cards-img-content { transform: translateX(-40px); -webkit-transform: translateX(-40px); -moz-transform: translateX(-40px); -ms-transform: translateX(-40px); -o-transform: translateX(-40px);
+} 
+
+.cards-img-content p {
+  font-size: 16px;
+}
+
+.cards-img-content h3 {
+  font-size: 18px;
+  width: 250px;
+}
+
+.people-cards  {
+display: flex;
+justify-content: center;
+width: 450px;
+}
+
+.title-footer {
+display: none;
+}
+
+.card-item {
+display: none;
+}
+
+.card-ofert-limited  {
+display: none;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#Suscribe {
+  display: none;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact-img {
+  display: none;
+}
+
+#oferta-box h2 {
+ font-size: 30px;
+}
+
+#oferta-box h5 {
+ font-size: 20px;
+}
+
+.beneficios-p {
+  display: none;
+}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  #cards-img {
+    display: flex;
+    flex-wrap: wrap;
+   }
+  
+   .cards-img-content {
+    transform: translateX(80px);
+    -webkit-transform: translateX(80px);
+    -moz-transform: translateX(80px);
+    -ms-transform: translateX(80px);
+    -o-transform: translateX(80px);
+} 
+
+.desktop {
+  display: none;
+}
+
+.hero-card {
+  left: 70px;
+}
+
+.hero-img {
+  height: 80vh;
+}
+
+.beneficios {
+  width: 100%;
+}
+
+#fijate {
+display: flex;
+flex-wrap: wrap;
+}
+
+#cards {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+}
+
+#cards img {
+width: 100%;
+object-fit: cover;
+}
+
+#cards-img {
+display: flex;
+flex-wrap: wrap;
+}
+
+.cards-img-content { transform: translateX(50px); -webkit-transform: translateX(50px); -moz-transform: translateX(50px); -ms-transform: translateX(50px); -o-transform: translateX(50px);
+} 
+
+.people-cards  {
+display: flex;
+justify-content: center;
+width: 450px;
+}
+
+.title-footer {
+display: none;
+}
+
+.card-item {
+display: none;
+}
+
+.card-ofert-limited  {
+display: none;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#Suscribe {
+  display: none;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact-img {
+  display: none;
+}
+} 
+
+
+@media (min-width: 768px) and (max-width: 998px) {
+  .desktop {
+    display: none;
+  }
+
+  .hero-card {
+    left: 70px;
+  }
+
+  .hero-img {
+    height: 80vh;
+  }
+
+  .beneficios {
+    width: 100%;
+}
+
+ #fijate {
+  display: flex;
+  flex-wrap: wrap;
+ }
+
+ #cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+ }
+
+ #cards img {
+  width: 100%;
+  object-fit: cover;
+ }
+
+ #cards-img {
+  display: flex;
+  flex-wrap: wrap;
+ }
+
+ .cards-img-content {
+  transform: translateX(200px);
+  -webkit-transform: translateX(200px);
+  -moz-transform: translateX(200px);
+  -ms-transform: translateX(200px);
+  -o-transform: translateX(200px);
+} 
+
+.people-cards  {
+  display: flex;
+  justify-content: center;
+  width: 450px;
+}
+
+.title-footer {
+  display: none;
+}
+
+.card-item {
+  display: none;
+ }
+
+ .card-ofert-limited  {
+  display: none;
+ }
+}
